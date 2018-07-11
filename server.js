@@ -1,6 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+const port = process.env.PORT || 3000;
 
 const app = express();
 app.set('view engine','hbs')
@@ -57,6 +58,6 @@ app.get('/bad',(req,res) => {
 
 app.use(express.static(__dirname + '/public'))
 
-app.listen(3000,()=>{
-  console.log(`Website is live on port 3000`);
+app.listen(port,()=>{
+  console.log(`Website is live on port ${port}`);
 });
